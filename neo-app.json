@@ -1,0 +1,40 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/bpmworkflowruntime",
+      "target": {
+        "type": "destination",
+        "name": "bpmworkflowruntime"
+      },
+      "description": "bpmworkflowruntime"
+    },
+    {
+      "path": "/crm_michaelangelo",
+      "target": {
+        "type": "destination",
+        "name": "crm_michaelangelo"
+      },
+      "description": "crm_michaelangelo"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

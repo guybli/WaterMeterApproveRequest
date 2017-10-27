@@ -1,0 +1,43 @@
+<mvc:View controllerName="CreateServiceRequest.controller.display" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Service Incident Details" labelSpanXL="3" labelSpanL="3"
+							labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+							columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="Last hour's usage"/>
+								<Text text="{oInputModel>/lastHourUsage} Litres"/>
+								<Label text="Threshold (Historic average)"/>
+								<Text text="{oInputModel>/averageUsage} Litres"></Text>
+								<Label text="Customer/site location"/>
+								<Link text="John Smith Dr, Oxford" press="handleLinkPress">
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S4"/>
+									</layoutData>
+								</Link>
+								<Label text="Description"/>
+								<Input value="{oInputModel>/description}"></Input>
+								<Label text="Severity"/>
+								<ComboBox showSecondaryValues="true" selectedKey="{oInputModel>/category}">
+									<core:ListItem key="Routinecheck" text="Recommend inspection" additionalText="Minor deviation from standard"/>
+									<core:ListItem key="Repair" text="Recommend repair" additionalText="Major deviation from standard"/>
+								</ComboBox>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="Approve / Create Incident" type="Accept" press="onApproveIncidentCreation"></Button>
+						<Button text="Reject" type="Reject" press="onRejectIncidentCreation"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
